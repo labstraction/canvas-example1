@@ -1,22 +1,40 @@
-console.log('ecco');
-
 const myCanvas = document.getElementById('my-canvas');
-
 const ctx = myCanvas.getContext('2d');
 
 
+
+
+
+
+
 for (let i = 0; i < 100; i++) {
+
+    const point = {
+        x: 300,
+        y: 300
+    }
+
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+
     
-    const originX = Math.random() * 600;
-    //0.1 * 600 = 60
-    const originy = Math.random() * 600;
-    //0.3 * 600 = 180
-    const width = Math.random() * 100;
-    //0.01 * 100 = 1
-    const height = Math.random() * 100;
-    //0.9 * 100 = 90
 
-    ctx.strokeStyle = 'white'
+    point.color = `rgb(${red},${green},${blue})`
 
-    ctx.strokeRect(originX,originy,width,height);
+    setInterval(() => {
+
+        const randomX = (Math.random()*4)-2;
+        const randomY = (Math.random()*4)-2;
+    
+        ctx.fillStyle = point.color
+        ctx.fillRect(point.x, point.y, 2, 2);
+        point.x += randomX;
+        point.y += randomY
+    }, 1);
+    
 }
+
+
+
+
