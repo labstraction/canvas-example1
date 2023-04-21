@@ -12,7 +12,7 @@ class Point{
 
     draw(ctx){
         ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, 4, 4);
+        ctx.fillRect(this.x, this.y, 1, 1);
     }
 
     changePosition(){
@@ -57,7 +57,7 @@ class Point{
         const green = Math.floor(Math.random() * 256);
         const blue = Math.floor(Math.random() * 256);
     
-        const randomColor = `rgb(${red},${green},${blue})`
+        const randomColor = `rgb(${255},${0},${blue})`
 
         const randomX = Math.random() * canvasWidth;
         const randomY = Math.random() * canvasHeight;
